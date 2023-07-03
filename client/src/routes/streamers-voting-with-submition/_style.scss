@@ -1,0 +1,127 @@
+.streamers-voting-with-submition {
+  .title {
+    font-size: 3rem;
+    margin-top: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  .streamer-submit {
+    display: flex;
+    flex-direction: column;
+
+    label {
+      margin: 1rem 0 0.5rem;
+      font-weight: bold;
+    }
+
+    .submit {
+      padding: 1rem;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      margin: 1rem auto;
+      text-transform: uppercase;
+
+      &--disable {
+        background-color: $background;
+        cursor: initial;
+        color: $light-gray;
+        transition: all 0.3s ease-in-out;
+      }
+    }
+  }
+}
+
+.votes {
+
+  .no-streamers-info {
+    margin-top: 1rem;
+    font-weight: bold;
+    color: $accent;
+    text-transform: uppercase;
+  }
+
+  .dev-info{
+    margin-top: 0.5rem;
+  }
+
+  .streamer-cards-wrapper {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+
+    @include sm {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include md {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    @include xl {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    .card {
+      padding: 1rem;
+      border: 1px solid $contrast-bright;
+      border-radius: $border-radius;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .name {
+      font-weight: bold;
+    }
+
+    .votes {
+      margin-top: 0.25rem;
+    }
+
+    .already-voted {
+      display: block;
+      margin-top: 0.5rem;
+      font-weight: bold;
+      padding: 1px;
+      text-transform: uppercase;
+      color: $accent;
+    }
+
+    .actions {
+      text-transform: uppercase;
+      display: flex;
+      flex-wrap: wrap;
+
+      button {
+        cursor: pointer;
+        margin-top: 0.5rem;
+      }
+
+      .vote--disable {
+        background-color: transparent;
+        color: transparent;
+        pointer-events: none;
+        cursor: initial;
+        transition: all 0.1s ease-in-out;
+      }
+
+      & :first-child {
+        margin-right: 0.5rem;
+      }
+    }
+
+    .go-to-details {
+      display: block;
+      text-decoration: none;
+      margin-top: 0.5rem;
+      text-align: center;
+      padding: 0.5rem 0;
+      text-transform: uppercase;
+      @include button-default($accent);
+    }
+  }
+}

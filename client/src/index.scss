@@ -1,0 +1,87 @@
+@import "./reset";
+@import "./consts";
+@import "./mixins";
+@import "./routes/layout";
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
+  background-color: $background;
+  color: $font;
+  max-width: 100vw;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+input,
+textarea,
+select {
+  color: $font;
+  background-color: $dark-main;
+  border: none;
+  border-radius: $border-radius;
+  padding: 10px;
+}
+
+p,
+span {
+  line-height: 150%;
+}
+
+button {
+  @include button-default($contrast-bright);
+  padding: 5px;
+  text-transform: uppercase;
+}
+
+a {
+  color: $font;
+}
+
+code {
+  color: $contrast-bright;
+  background-color: black;
+  padding: 5px;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background-color: rgba($background, 0.7);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+  z-index: 999;
+  padding: 2rem 1rem 1rem;
+}
+
+.modal-content {
+  height: 100%;
+  padding: 1rem;
+  text-align: center;
+  background-color: $dark-main;
+  color: $white;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  border-radius: $border-radius;
+  font-size: 2rem;
+
+  @include md {
+    width: 60%;
+    height: 60%;
+  }
+
+  @include xl {
+    width: 40%;
+    height: 40%;
+  }
+}

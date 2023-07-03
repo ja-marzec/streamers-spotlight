@@ -1,0 +1,46 @@
+.streamer-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  @include xl {
+    flex-direction: row;
+    gap: 2rem;
+  }
+
+  .avatar {
+    width: 100%;
+    border-radius: $border-radius;
+
+    @include sm {
+      width: 200px;
+      height: 200px;
+    }
+  }
+
+  .name {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+
+  .subtitle {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+  }
+
+  .description {
+    margin-top: 1rem;
+  }
+
+  .category {
+    font-weight: bold;
+  }
+}
+
+.go-to-main {
+  @include button-default($accent);
+  padding: 0.5rem;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 2rem;
+}
